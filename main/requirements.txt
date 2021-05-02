@@ -1,0 +1,10 @@
+Flask
+flask_restful
+pymongo
+bcrypt
+uwsgi
+flask_jwt
+python-dotenv
+pyjwt
+Flask-JWT
+pytest
