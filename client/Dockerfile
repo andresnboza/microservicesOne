@@ -1,15 +1,9 @@
-FROM node
+FROM node:14
 
-RUN mkdir -p /usr/src/client
+RUN mkdir -p /usr/src/app
 
-WORKDIR /usr/src/client
+WORKDIR /usr/src/app
 
-COPY . /usr/src/client
+RUN npm install -g @angular/cli 
 
-RUN npm cache verify
-RUN npm install
-
-EXPOSE 8080
-EXPOSE 4200
-
-CMD ["npm", "run", "start"]
+COPY . .
