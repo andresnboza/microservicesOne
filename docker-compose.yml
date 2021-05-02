@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+    admin:
+        build: ./admin
+        ports: 
+            - 8080:8080
+        volumes: 
+            - './admin:/usr/src/app'
+        restart: always
+        
+    main:
+        build: ./main
+        ports: 
+            - 8081:8081
+        volumes: 
+            - './main:/usr/src/app'
+        restart: always
+
+    client:
+        build: ./client
+        ports: 
+            - 4200:4200
+        volumes: 
+            - './client:/usr/src/app'
+        links:
+            - admin
+            - main
+        restart: always
+        
