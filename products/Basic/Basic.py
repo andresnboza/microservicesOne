@@ -3,4 +3,4 @@ from flask_restful import Resource
 
 class Basic(Resource):
     def get(self):
-        return jsonify('api runnig for admin')
+        return jsonify('Running the Products API')
